@@ -1,7 +1,8 @@
+import { TransactionId } from '@/types/Common';
 import { v4 as uuid } from 'uuid';
 
 class TransactionService {
-  private id: string;
+  private id: TransactionId;
 
   constructor() {
     this.id = uuid();

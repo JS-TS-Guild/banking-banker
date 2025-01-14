@@ -1,19 +1,27 @@
+import GlobalRegistry from '@/services/GlobalRegistry';
+import { Accounts, UserId, UserName } from '@/types/Common';
 import { v4 as uuid } from 'uuid';
 
 class User {
-  private id: string;
-  private name: string;
-  private accounts: string[];
+  id: UserId;
+  name: UserName;
+  accounts: Accounts;
 
-  constructor(name: string, accounts: string[]) {
+  constructor(name: UserName, accounts: Accounts) {
     this.id = uuid();
     this.name = name;
     this.accounts = accounts;
   }
 
-  static create(name: string, accounts: string[]) {
+  static create(name: UserName, accounts: Accounts): User {
     const user = new User(name, accounts);
+
+    GlobalRegistry.addUser(user);
     return user;
+  }
+
+  getId() {
+    return this.id;
   }
 }
 

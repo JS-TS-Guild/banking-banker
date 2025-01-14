@@ -1,8 +1,9 @@
+import { BankAccountBalance, BankAccountId } from '@/types/Common';
 import { v4 as uuid } from 'uuid';
 
 class BankAccount {
-  private id: string;
-  private balance: number;
+  private id: BankAccountId;
+  private balance: BankAccountBalance;
 
   constructor(money: number) {
     this.id = uuid();
