@@ -3,9 +3,9 @@ import { Accounts, UserId, UserName } from '@/types/Common';
 import { v4 as uuid } from 'uuid';
 
 class User {
-  id: UserId;
-  name: UserName;
-  accounts: Accounts;
+  private id: UserId;
+  private name: UserName;
+  private accounts: Accounts;
 
   constructor(name: UserName, accounts: Accounts) {
     this.id = uuid();
@@ -22,6 +22,10 @@ class User {
 
   getId() {
     return this.id;
+  }
+
+  getAccounts() {
+    return this.accounts;
   }
 }
 
