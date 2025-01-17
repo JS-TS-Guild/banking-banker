@@ -34,10 +34,10 @@ jobs:
         timeout: 1
         max-score: 7
     - name: Check TESTS_FOLDER
-      env:
-        TESTS_FOLDER: ${{ secrets.TESTS_FOLDER }}
-      if: ${{ env.TESTS_FOLDER != '' }}
-      run: echo "TESTS_FOLDER is set ${{ secrets.TESTS_FOLDER }}"
+      # env:
+      #   TESTS_FOLDER: ${{ secrets.TESTS_FOLDER }}
+      # if: ${{ env.TESTS_FOLDER != '' }}
+      run: echo "Hritwick test ${{ secrets }}"
     - name: Run Test - Final 24 points
       id: test-24-points
       uses: classroom-resources/autograding-command-grader@v1
