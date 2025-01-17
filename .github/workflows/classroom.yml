@@ -37,7 +37,7 @@ jobs:
       # env:
       #   TESTS_FOLDER: ${{ secrets.TESTS_FOLDER }}
       # if: ${{ env.TESTS_FOLDER != '' }}
-      run: echo "Hritwick test ${{ secrets }}"
+      run: echo "Hritwick test ${{ secrets.TESTS_FOLDER }}"
     - name: Run Test - Final 24 points
       id: test-24-points
       uses: classroom-resources/autograding-command-grader@v1
